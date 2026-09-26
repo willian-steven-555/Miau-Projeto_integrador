@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="720" prefWidth="1280" stylesheets="@../Estilo/Estilo.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDGJ.Controle.DicasC">
+   <children>
+      <BorderPane layoutX="236.0" layoutY="210.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="120.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="1165.0" layoutY="41.0" mnemonicParsing="false" onAction="#irParaPerfil" styleClass="botao" text="Perfil" />
+                  <Button layoutX="1057.0" layoutY="42.0" mnemonicParsing="false" onAction="#irParaDoacao" styleClass="botao" text="Doar" />
+                  <Button layoutX="942.0" layoutY="42.0" mnemonicParsing="false" onAction="#irParaInicio" styleClass="botao" text="Inicio" />
+                  <Pane layoutX="33.0" layoutY="12.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
+                  <Label layoutX="145.0" layoutY="24.0" styleClass="Miau" text="Miau" />
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <Pane prefHeight="75.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

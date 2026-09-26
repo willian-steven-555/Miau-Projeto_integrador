@@ -1,0 +1,103 @@
+.root {
+    -cor-fundo: #fff8f0;
+    -cor-painel: #2d78bf;
+
+    -cor-botao: #0c4379;
+
+    -cor-texto: #FFFFFF;
+    -cor-texto-secundario: #000000;
+
+    -fx-background-color: -cor-fundo;
+}
+.Miau{
+    -fx-text-fill: -cor-texto;
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+}
+.titulo {
+    -fx-text-fill: -cor-texto;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.subtitulo {
+    -fx-text-fill: -cor-texto;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.texto {
+    -fx-text-fill: -cor-texto;
+    -fx-font-size: 14px;
+}
+
+.texto-secundario {
+    -fx-text-fill: -cor-texto-secundario;
+    -fx-font-size: 14px;
+}
+
+.botao {
+    -fx-background-color: -cor-botao;
+    -fx-text-fill: -cor-texto;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+
+    -fx-padding: 10px 18px;
+    -fx-cursor: hand;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.20), 4, 0, 0, 2);
+}
+
+.botao:hover {
+    -fx-background-color: derive(-cor-botao, 15%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 6, 0, 0, 2);
+}
+
+.botao:pressed {
+    -fx-background-color: derive(-cor-botao, -15%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 2, 0, 0, 1);
+    -fx-translate-y: 1px;
+}
+
+.painel {
+    -fx-background-color: -cor-painel;
+}
+
+.campo {
+    -fx-background-color: -cor-fundo;
+    -fx-text-fill: -cor-texto-secundario;
+
+    -fx-prompt-text-fill: derive(-cor-texto-secundario, 40%);
+
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 2px;
+
+    -fx-padding: 8px 10px;
+}
+
+.campo:focused {
+    -fx-border-color: -cor-botao;
+    -fx-background-color: white;
+}
+.logo {
+    -fx-background-image: url("Imagens/Logo.png");
+}
+.botaoEditar{
+    -fx-background-image: url("Imagens/edit.png");
+}
+.botaoEditar:hover{
+    -fx-background-color: derive(-cor-botao, 15%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 6, 0, 0, 2);
+}
+.botaoEditar:pressed {
+    -fx-background-color: derive(-cor-botao, -15%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 2, 0, 0, 1);
+    -fx-translate-y: 1px;
+}
