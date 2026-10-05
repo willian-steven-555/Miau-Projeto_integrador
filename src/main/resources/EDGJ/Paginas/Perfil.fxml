@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Estilo/Estilo.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDGJ.Controle.PerfilC">
+
+   <children>
+
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+
+         <!-- CABEÇALHO -->
+         <top>
+
+            <Pane prefHeight="100.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER">
+
+               <children>
+
+                  <Pane layoutX="26.0" layoutY="6.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
+
+                  <Label layoutX="147.0" layoutY="15.0" styleClass="Miau" text="Miau" />
+
+                  <Button layoutX="1148.0" layoutY="28.0" mnemonicParsing="false" onAction="#irParaDoacao" styleClass="botao" text="Doar" />
+
+                  <Button layoutX="998.0" layoutY="28.0" mnemonicParsing="false" onAction="#irParaAddAnimal" styleClass="botao" text="Postar animal" />
+
+                  <Button layoutX="904.0" layoutY="28.0" mnemonicParsing="false" onAction="#irParaInicio" styleClass="botao" text="Inicio" />
+
+               </children>
+
+            </Pane>
+
+         </top>
+
+
+         <!-- RODAPÉ -->
+         <bottom>
+
+            <Pane prefHeight="90.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER">
+
+               <children>
+
+                  <Button layoutX="1145.0" layoutY="25.0" mnemonicParsing="false" onAction="#logout" styleClass="botao" text="Sair" />
+
+                  <Button layoutX="37.0" layoutY="27.0" mnemonicParsing="false" onAction="#apagarConta" styleClass="botao" text="Apagar conta" />
+                  <Button layoutX="588.0" layoutY="28.0" mnemonicParsing="false" onAction="#editarAll" styleClass="botao" text="Edição completa" />
+
+               </children>
+
+            </Pane>
+
+         </bottom>
+
+
+         <!-- CONTEÚDO -->
+         <center>
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefWidth="1280.0" vbarPolicy="AS_NEEDED" BorderPane.alignment="CENTER">
+
+               <content>
+
+                  <VBox fillWidth="true" prefWidth="1264.0" spacing="0.0">
+
+                     <children>
+
+
+                        <!-- ÁREA DO PERFIL -->
+
+                        <Pane prefHeight="500.0" prefWidth="1264.0">
+
+                           <children>
+
+                              <!-- Painel principal -->
+                              <Pane layoutX="273.0" layoutY="40.0" prefHeight="444.0" prefWidth="783.0" styleClass="painel">
+
+                                 <children>
+
+                                    <Label layoutX="356.0" layoutY="38.0" styleClass="titulo" text="Perfil" />
+
+                                    <Button layoutX="494.0" layoutY="314.0" mnemonicParsing="false" onAction="#editarSenha" prefHeight="41.0" prefWidth="158.0" styleClass="botao" text="Mudar senha" />
+
+                                    <Label layoutX="311.0" layoutY="411.0" styleClass="subtitulo" text="Animais postados" />
+
+                                    <Button layoutX="233.0" layoutY="112.0" mnemonicParsing="false" onAction="#editarNomeUsuario" prefHeight="25.0" prefWidth="25.0" styleClass="botaoEditar" />
+
+                                    <Button layoutX="235.0" layoutY="213.0" mnemonicParsing="false" onAction="#editarNome" prefHeight="25.0" prefWidth="25.0" styleClass="botaoEditar" />
+
+                                    <Button layoutX="235.0" layoutY="302.0" mnemonicParsing="false" onAction="#editarEmail" prefHeight="25.0" prefWidth="25.0" styleClass="botaoEditar" />
+
+                                 </children>
+
+                              </Pane>
+
+
+                              <!-- NOME DE USUÁRIO -->
+
+                              <Label layoutX="338.0" layoutY="148.0" styleClass="subtitulo" text="Nome de Usuario" />
+
+                              <Label fx:id="nomeUsuario" layoutX="338.0" layoutY="194.0" styleClass="texto" text="nome" />
+
+
+                              <!-- NOME -->
+
+                              <Label layoutX="338.0" layoutY="241.0" styleClass="subtitulo" text="Nome" />
+
+                              <Label fx:id="nome" layoutX="338.0" layoutY="287.0" styleClass="texto" text="nome" />
+
+
+                              <!-- EMAIL -->
+
+                              <Label layoutX="338.0" layoutY="337.0" styleClass="subtitulo" text="Email" />
+
+                              <Label fx:id="email" layoutX="338.0" layoutY="383.0" styleClass="texto" text="nome" />
+
+
+                              <!-- TELEFONE -->
+
+                              <Label layoutX="697.0" layoutY="148.0" styleClass="subtitulo" text="Telefone" />
+
+                              <Button layoutX="909.0" layoutY="166.0" mnemonicParsing="false" onAction="#editarTelefone" prefHeight="25.0" prefWidth="25.0" styleClass="botaoEditar" />
+
+                              <Label fx:id="telefone" layoutX="697.0" layoutY="194.0" styleClass="texto" text="nome" />
+
+
+                              <!-- ENDEREÇO -->
+
+                              <Label layoutX="697.0" layoutY="241.0" styleClass="subtitulo" text="Endereço" />
+
+                              <Button layoutX="909.0" layoutY="259.0" mnemonicParsing="false" onAction="#editarEndereco" prefHeight="25.0" prefWidth="25.0" styleClass="botaoEditar" />
+
+                              <Label fx:id="endereco" layoutX="697.0" layoutY="287.0" styleClass="texto" text="nome" />
+
+                           </children>
+
+                        </Pane>
+
+
+                        <!-- ANIMAIS POSTADOS -->
+
+                        <FlowPane fx:id="painelAnimais" alignment="TOP_CENTER" columnHalignment="CENTER" hgap="25.0" maxHeight="-1.0" minHeight="22.0" prefWidth="1265.0" vgap="25.0">
+
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                           </padding>
+
+                        </FlowPane>
+
+
+                     </children>
+
+                  </VBox>
+
+               </content>
+
+            </ScrollPane>
+
+         </center>
+
+      </BorderPane>
+
+   </children>
+
+</AnchorPane>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Estilo/Estilo.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDGJ.Controle.VisorAdminC">
+
+   <children>
+
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+
+         <!-- CABEÇALHO -->
+         <top>
+
+            <Pane prefHeight="100.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER">
+
+               <children>
+
+                  <Pane layoutX="26.0" layoutY="6.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
+
+                  <Label layoutX="147.0" layoutY="15.0" styleClass="Miau" text="Miau" />
+
+                  <Button layoutX="1148.0" layoutY="28.0" mnemonicParsing="false" onAction="#irParaDoacao" styleClass="botao" text="Doar" />
+
+                  <Button layoutX="998.0" layoutY="28.0" mnemonicParsing="false" onAction="#irParaAddAnimal" styleClass="botao" text="Postar animal" />
+
+                  <Button layoutX="904.0" layoutY="28.0" mnemonicParsing="false" onAction="#irParaInicio" styleClass="botao" text="Inicio" />
+                  <Button layoutX="757.0" layoutY="28.0" mnemonicParsing="false" onAction="#irParaVerUsuario" styleClass="botao" text="Visor admin" />
+
+               </children>
+
+            </Pane>
+
+         </top>
+
+
+         <!-- RODAPÉ -->
+         <bottom>
+
+            <Pane prefHeight="90.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER" />
+
+         </bottom>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+
+      
+                        <!-- ÁREA DO PERFIL -->
+
+                        <Pane layoutX="-1.0" prefHeight="529.0" prefWidth="1278.0">
+
+                           <children>
+
+                              <!-- Painel principal -->
+                        <Pane layoutX="64.0" layoutY="40.0" prefHeight="442.0" prefWidth="429.0" styleClass="painel">
+
+                                 <children>
+
+                                    <Label layoutX="179.0" layoutY="33.0" styleClass="titulo" text="Perfil" />
+
+                                    <Label layoutX="44.0" layoutY="382.0" styleClass="subtitulo" text="Animais postados" />
+
+            
+                              <!-- TELEFONE -->
+
+                                          <Label layoutX="236.0" layoutY="107.0" styleClass="subtitulo" text="Telefone" />
+
+                                          <Label fx:id="telefone" layoutX="236.0" layoutY="152.0" styleClass="texto" text="nome" />
+
+            
+                                          <!-- NOME DE USUÁRIO -->
+
+                                          <Label layoutX="44.0" layoutY="108.0" styleClass="subtitulo" text="Nome de Usuario" />
+
+                                          <Label fx:id="nomeUsuario" layoutX="44.0" layoutY="154.0" styleClass="texto" text="nome" />
+
+            
+                                          <!-- NOME -->
+
+                                          <Label layoutX="44.0" layoutY="201.0" styleClass="subtitulo" text="Nome" />
+
+                                          <Label fx:id="nome" layoutX="44.0" layoutY="247.0" styleClass="texto" text="nome" />
+
+            
+                                          <!-- EMAIL -->
+
+                                          <Label layoutX="242.0" layoutY="196.0" styleClass="subtitulo" text="Email" />
+
+                                          <Label fx:id="email" layoutX="242.0" layoutY="242.0" styleClass="texto" text="nome" />
+                              <CheckBox fx:id="removidos" layoutX="251.0" layoutY="386.0" mnemonicParsing="false" onAction="#verAnimais" styleClass="texto" text="Removidos" />
+                              <Button fx:id="b1" layoutX="115.0" layoutY="316.0" mnemonicParsing="false" onAction="#b1Action" prefHeight="43.0" prefWidth="197.0" styleClass="botao" text="Remover usuario" />
+                              <Button fx:id="justificativa" layoutX="352.0" layoutY="29.0" mnemonicParsing="false" onAction="#verJustificativa" styleClass="botao" text="?" />
+
+                                 </children>
+
+                              </Pane>
+                        <ScrollPane layoutX="526.0" layoutY="31.0" prefHeight="456.0" prefWidth="714.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="452.0" prefWidth="700.0">
+                                 <children>
+            
+                                    
+                                          <!-- ANIMAIS POSTADOS -->
+            
+                                                            <FlowPane fx:id="painelAnimais" alignment="TOP_CENTER" columnHalignment="CENTER" hgap="25.0" maxHeight="-1.0" minHeight="22.0" prefHeight="200.0" prefWidth="709.0" vgap="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            
+                                                               <padding>
+                                          <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                                       </padding>
+                                       <children>
+                              
+                                          <VBox fillWidth="true" prefHeight="42.0" prefWidth="735.0" spacing="0.0" />
+                                       </children>
+            
+                                                            </FlowPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+
+                           </children>
+
+                        </Pane>
+               </children>
+            </Pane>
+         </center>
+
+      </BorderPane>
+
+   </children>
+
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="720" prefWidth="1280" stylesheets="@../Estilo/Estilo.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDGJ.Controle.DicasC">
+   <children>
+      <BorderPane layoutX="236.0" layoutY="210.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="100.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="1165.0" layoutY="30.0" mnemonicParsing="false" onAction="#irParaPerfil" styleClass="botao" text="Perfil" />
+                  <Button layoutX="1057.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaDoacao" styleClass="botao" text="Doar" />
+                  <Button layoutX="942.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaInicio" styleClass="botao" text="Inicio" />
+                  <Pane layoutX="22.0" layoutY="4.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
+                  <Label layoutX="136.0" layoutY="14.0" styleClass="Miau" text="Miau" />
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <Pane prefHeight="75.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <content>
+                  <Pane prefHeight="934.0" prefWidth="1264.0">
+                     <children>
+                        <AnchorPane layoutX="81.0" layoutY="82.0" prefHeight="400.0" prefWidth="400.0" styleClass="painel">
+                           <children>
+                              <ImageView fx:id="img1" fitHeight="400.0" fitWidth="400.0" layoutX="96.0" layoutY="-0.8" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="585.0" layoutY="86.0" prefHeight="219.0" prefWidth="550.0" styleClass="texto-secundario" text="O melhor caçador de demônios está de volta com estilo, no jogo que os fãs de ação estavam esperando. Agora inclui o conteúdo baixável Personagem Jogável: Vergil (também disponível separadamente).&#10;&#10;Um novo episódio na lendária série de ação, Devil May Cry 5 traz junto sua clássica mistura de ação turbinada com personagens originais de outro mundo e a mais nova tecnologia de jogos Capcom para trazer uma obra de arte de ação e aventura visualmente inovadora.&#10;&#10;Verifique suas compras anteriores para evitar compras duplicadas.&#10;" wrapText="true" />
+                        <AnchorPane layoutX="732.0" layoutY="520.0" prefHeight="400.0" prefWidth="400.0" styleClass="painel">
+                           <children>
+                              <ImageView fx:id="img2" fitHeight="400.0" fitWidth="400.0" layoutX="96.0" layoutY="-0.8" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="82.0" layoutY="511.0" prefHeight="219.0" prefWidth="550.0" styleClass="texto-secundario" text="O melhor caçador de demônios está de volta com estilo, no jogo que os fãs de ação estavam esperando. Agora inclui o conteúdo baixável Personagem Jogável: Vergil (também disponível separadamente).&#10;&#10;Um novo episódio na lendária série de ação, Devil May Cry 5 traz junto sua clássica mistura de ação turbinada com personagens originais de outro mundo e a mais nova tecnologia de jogos Capcom para trazer uma obra de arte de ação e aventura visualmente inovadora.&#10;&#10;Verifique suas compras anteriores para evitar compras duplicadas.&#10;" wrapText="true" />
+                     </children></Pane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

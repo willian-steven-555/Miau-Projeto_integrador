@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root" stylesheets="@../Estilo/Estilo.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDGJ.Controle.VisorAdmin2C">
+   <children>
+      <BorderPane prefHeight="720.0" prefWidth="1280.0">
+         <top>
+            <Pane prefHeight="100.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="117.0" layoutY="11.0" prefHeight="71.0" prefWidth="239.0" text="Miau" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="13.0" layoutY="4.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
+                  <Button layoutX="889.0" layoutY="30.0" mnemonicParsing="false" onAction="#irParaInicio" styleClass="botao" text="Inicio" />
+                  <Button layoutX="984.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaPerfil" styleClass="botao" text="Perfil" />
+                  <Button layoutX="1085.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaAddAnimal" styleClass="botao" text="Postar animal" />
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <Pane prefHeight="75.0" prefWidth="600.0" styleClass="painel" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <Pane prefHeight="400.0" prefWidth="600.0" styleClass="root" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="668.0" layoutY="21.0" prefHeight="500.0" prefWidth="550.0" styleClass="painel">
+                     <children>
+                        <Label layoutX="197.0" layoutY="18.0" styleClass="subtitulo" text="Animais removidos" />
+                        <ScrollPane layoutX="-3.0" layoutY="55.0" prefHeight="446.0" prefWidth="571.0" style="-fx-background-color: blue;">
+                           <content>
+                              <FlowPane fx:id="painelAnimais" prefHeight="445.0" prefWidth="550.0">
+                                 <children>
+                                    <VBox prefHeight="450.0" prefWidth="551.0" />
+                                 </children>
+                              </FlowPane>
+                           </content>
+                        </ScrollPane>
+                        <CheckBox fx:id="animalCheckBox" layoutX="427.0" layoutY="20.0" mnemonicParsing="false" onAction="#mudaVA" styleClass="texto" text="Removidos" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="61.0" layoutY="20.0" prefHeight="500.0" prefWidth="550.0" styleClass="painel">
+                     <children>
+                        <Label layoutX="197.0" layoutY="18.0" styleClass="subtitulo" text="Usuarios removidos" />
+                        <ScrollPane layoutX="-3.0" layoutY="55.0" prefHeight="446.0" prefWidth="571.0" style="-fx-background-color: blue;">
+                           <content>
+                              <FlowPane fx:id="painelUsuarios" prefHeight="445.0" prefWidth="550.0">
+                                 <children>
+                                    <VBox prefHeight="450.0" prefWidth="551.0" />
+                                 </children>
+                              </FlowPane>
+                           </content>
+                        </ScrollPane>
+                        <CheckBox fx:id="usuarioCheckBox" layoutX="435.0" layoutY="19.0" mnemonicParsing="false" onAction="#mudaVU" styleClass="texto" text="Removidos" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

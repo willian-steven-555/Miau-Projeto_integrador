@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="227.0" prefWidth="641.0" styleClass="painel" stylesheets="@../Estilo/Estilo.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDGJ.Controle.UsuarioCardC">
+   <children>
+      <Label layoutX="35.0" layoutY="35.0" styleClass="subtitulo" text="Usuario:" />
+      <Label fx:id="usuario" layoutX="36.0" layoutY="75.0" styleClass="titulo" text="Label" />
+      <Button fx:id="justificativa" layoutX="511.0" layoutY="154.0" mnemonicParsing="false" onAction="#verJustificativa" styleClass="botao" text="?" />
+      <Button layoutX="381.0" layoutY="154.0" mnemonicParsing="false" onAction="#verMais" styleClass="botao" text="Ver mais" />
+      <Label layoutX="35.0" layoutY="121.0" styleClass="subtitulo" text="Nome:" />
+      <Label fx:id="nome" layoutX="36.0" layoutY="161.0" styleClass="titulo" text="Label" />
+      <Label layoutX="300.0" layoutY="36.0" styleClass="subtitulo" text="Telefone:" />
+      <Label fx:id="telefone" layoutX="301.0" layoutY="76.0" styleClass="titulo" text="Label" />
+   </children>
+</AnchorPane>

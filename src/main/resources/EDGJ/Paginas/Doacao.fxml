@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Estilo/Estilo.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDGJ.Controle.DoacaoC">
+   <children>
+      <BorderPane layoutX="355.0" layoutY="240.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="100.0" prefWidth="200.0" styleClass="painel" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="22.0" layoutY="5.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
+                  <Button layoutX="1161.0" layoutY="32.0" mnemonicParsing="false" onAction="#irParaPerfil" styleClass="botao" text="Perfil" />
+                  <Button layoutX="1016.0" layoutY="32.0" mnemonicParsing="false" onAction="#irParaAddAnimal" styleClass="botao" text="Postar Animal" />
+                  <Button layoutX="924.0" layoutY="32.0" mnemonicParsing="false" onAction="#irParaInicio" styleClass="botao" text="Inicio" />
+                  <Label layoutX="133.0" layoutY="14.0" styleClass="Miau" text="Miau" />
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <Pane prefHeight="90.0" prefWidth="200.0" styleClass="painel" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <content>
+                  <Pane prefHeight="508.0" prefWidth="1278.0">
+                     <children>
+                        <Pane layoutX="162.0" layoutY="54.0" prefHeight="400.0" prefWidth="975.0" styleClass="painel">
+                           <children>
+                              <ImageView fx:id="pix" fitHeight="280.0" fitWidth="280.0" layoutX="620.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label layoutX="55.0" layoutY="31.0" prefHeight="55.0" prefWidth="356.0" styleClass="titulo" text="Doações" />
+                              <Label layoutX="60.0" layoutY="89.0" lineSpacing="1.0" prefHeight="238.0" prefWidth="452.0" styleClass="subtitulo" text=" Ajude os gatos da instituição ao fazer doações!&#10;O dinheiro arrecadado será usado pa ração, areia e outros utensílios para o cuidado com os animais.&#10;Agradeçemos de antemão qualquer doação." wrapText="true" />
+                           </children></Pane>
+                     </children>
+                  </Pane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Estilo/Estilo.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDGJ.Controle.AnimalC">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="120.0" prefWidth="200.0" styleClass="painel" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="29.0" layoutY="13.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
+                  <Label layoutX="155.0" layoutY="20.0" styleClass="Miau" text="Miau" />
+                  <Button layoutX="1162.0" layoutY="48.0" mnemonicParsing="false" onAction="#irParaPerfil" styleClass="botao" text="Perfil" />
+                  <Button layoutX="1061.0" layoutY="48.0" mnemonicParsing="false" onAction="#irParaDoacao" styleClass="botao" text="Doar" />
+                  <Button layoutX="943.0" layoutY="44.0" mnemonicParsing="false" onAction="#irParaInicio" styleClass="botao" text="Inicio" />
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <Pane prefHeight="90.0" prefWidth="200.0" styleClass="painel" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="apagar" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#apagarAnimal" styleClass="botao" text="Apagar post" />
+                  <Button fx:id="ver" layoutX="1116.0" layoutY="26.0" mnemonicParsing="false" onAction="#verPublicador" styleClass="botao" text="Ver publicador" />
+               </children></Pane>
+         </bottom>
+         <center>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <content>
+                  <Pane prefHeight="511.0" prefWidth="1264.0">
+                     <children>
+                        <Pane layoutX="255.0" layoutY="34.0" prefHeight="437.0" prefWidth="759.0" styleClass="painel">
+                           <children>
+                              <AnchorPane layoutX="52.0" layoutY="45.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: -cor-fundo;">
+                                 <children>
+                                    <ImageView fx:id="imagem" fitHeight="301.0" fitWidth="302.0" layoutX="13.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="63.0" layoutY="359.0" styleClass="texto" text="Nome: " />
+                              <Label fx:id="nome" layoutX="61.0" layoutY="379.0" prefHeight="30.0" prefWidth="203.0" styleClass="titulo" text="Label" />
+                              <Label layoutX="588.0" layoutY="186.0" styleClass="texto" text="Idade:" />
+                              <Label fx:id="idade" layoutX="586.0" layoutY="206.0" prefHeight="30.0" prefWidth="149.0" styleClass="subtitulo" text="Label" />
+                              <Label layoutX="410.0" layoutY="63.0" styleClass="texto" text="Especie" />
+                              <Label fx:id="especie" layoutX="408.0" layoutY="83.0" prefHeight="30.0" prefWidth="203.0" styleClass="subtitulo" text="Label" />
+                              <Label layoutX="411.0" layoutY="128.0" styleClass="texto" text="Sexo" />
+                              <Label fx:id="genero" layoutX="409.0" layoutY="148.0" prefHeight="30.0" prefWidth="203.0" styleClass="subtitulo" text="Label" />
+                              <Label layoutX="412.0" layoutY="189.0" styleClass="texto" text="Porte" />
+                              <Label fx:id="porte" layoutX="410.0" layoutY="209.0" prefHeight="30.0" prefWidth="203.0" styleClass="subtitulo" text="Label" />
+                              <Label layoutX="589.0" layoutY="64.0" styleClass="texto" text="Raça" />
+                              <Label fx:id="raca" layoutX="587.0" layoutY="84.0" prefHeight="30.0" prefWidth="139.0" styleClass="subtitulo" text="Label" />
+                              <Label layoutX="589.0" layoutY="129.0" styleClass="texto" text="Publicador" />
+                              <Label fx:id="publicador" layoutX="587.0" layoutY="149.0" prefHeight="30.0" prefWidth="145.0" styleClass="subtitulo" text="Label" />
+                              <Button layoutX="416.0" layoutY="282.0" mnemonicParsing="false" onAction="#mostrarDados" prefHeight="41.0" prefWidth="233.0" styleClass="botao" text="Tenho interesse" />
+                              <Button fx:id="apagarPostUsuario" layoutX="391.0" layoutY="359.0" mnemonicParsing="false" onAction="#apagarPost" styleClass="botao" text="Apagar post" />
+                              <Button fx:id="editarPost" layoutX="567.0" layoutY="359.0" mnemonicParsing="false" onAction="#editarPost" styleClass="botao" text="Editar post" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

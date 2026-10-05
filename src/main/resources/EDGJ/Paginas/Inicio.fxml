@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Estilo/Estilo.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDGJ.Controle.InicioC">
+
+   <!-- CABEÇALHO -->
+   <top>
+      <Pane prefHeight="100.0" prefWidth="1280.0" styleClass="painel" BorderPane.alignment="CENTER">
+
+         <children>
+
+            <Pane layoutX="19.0" layoutY="4.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
+
+            <Button layoutX="1153.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaDoacao" styleClass="botao" text="Doar" />
+
+            <Button layoutX="1000.0" layoutY="32.0" mnemonicParsing="false" onAction="#irParaAddAnimal" styleClass="botao" text="Postar animal" />
+
+            <Button layoutX="906.0" layoutY="32.0" mnemonicParsing="false" onAction="#irParaPerfil" styleClass="botao" text="Perfil" />
+
+            <Label layoutX="140.0" layoutY="16.0" styleClass="Miau" text="Miau" />
+            <Button fx:id="admin" layoutX="761.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaAdmin" styleClass="botao" text="Visor admin" />
+
+         </children>
+      </Pane>
+   </top>
+
+
+   <!-- ÁREA PRINCIPAL -->
+   <center>
+
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="620.0" prefWidth="1280.0" vbarPolicy="AS_NEEDED" BorderPane.alignment="CENTER">
+
+         <content>
+
+            <VBox fillWidth="true" prefWidth="1264.0" spacing="0.0">
+
+               <!-- ÁREA SUPERIOR -->
+               <children>
+
+                  <Pane prefHeight="256.0" prefWidth="1264.0">
+
+                     <children>
+
+                        <!-- Fundo/banner -->
+                        <Pane layoutX="-5.0" opacity="0.5" prefHeight="256.0" prefWidth="1281.0" style="-fx-background-color: blue;" />
+
+                        <!-- Texto -->
+                        <Label layoutX="98.0" layoutY="36.0" prefHeight="187.0" prefWidth="850.0" styleClass="texto" text="eftwnjfdjsfnjkzvfjkkfdzdnjfzvnjfzdnjbf" />
+
+                        <!-- Botão de dicas -->
+                        <Button layoutX="1114.0" layoutY="108.0" mnemonicParsing="false" onAction="#irParaVerDicas" prefHeight="59.0" prefWidth="121.0" styleClass="botao" text="Ver dicas" />
+
+                     </children>
+                  </Pane>
+
+                  <FlowPane fx:id="painelAnimais" alignment="TOP_CENTER" columnHalignment="CENTER" hgap="25.0" maxHeight="-1.0" minHeight="292.0" prefWidth="1265.0" vgap="25.0">
+
+                     <padding>
+                        <javafx.geometry.Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </padding>
+
+                  </FlowPane>
+
+
+                  <!-- RODAPÉ -->
+                  <Pane prefHeight="75.0" prefWidth="1326.0" styleClass="painel" />
+
+               </children>
+
+            </VBox>
+
+         </content>
+
+      </ScrollPane>
+
+   </center>
+
+</BorderPane>
