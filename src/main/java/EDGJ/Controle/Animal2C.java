@@ -1,13 +1,11 @@
 package EDGJ.Controle;
 
 import EDGJ.Dados.DadosAnimal;
-import EDGJ.Dados.MDadosAdmin;
 import EDGJ.Modelos.Animal;
 import EDGJ.Modelos.Enums.Tela;
 import EDGJ.Modelos.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
@@ -15,19 +13,19 @@ import javax.swing.*;
 
 public class Animal2C extends AnimalC{
     @FXML
-    private Label nome;
+    private Label lblNome;
     @FXML
-    private Label idade;
+    private Label lblIdade;
     @FXML
-    private Label raca;
+    private Label lblRaca;
     @FXML
-    private Label especie;
+    private Label lblEspecie;
     @FXML
-    private Label genero;
+    private Label lblGenero;
     @FXML
-    private Label porte;
+    private Label lblPorte;
     @FXML
-    private Label publicador;
+    private Label lblPublicador;
     @FXML
     private ImageView imagem;
     @FXML
@@ -37,13 +35,13 @@ public class Animal2C extends AnimalC{
     }
     public void initialize(){
         imagem.setImage(Animal.animal.getImagem());
-        nome.setText(Animal.animal.getNome());
-        idade.setText(""+Animal.animal.getIdade());
-        raca.setText(Animal.animal.getRaca());
-        especie.setText(Animal.animal.getSpecie().toString());
-        genero.setText(Animal.animal.getGender().toString());
-        porte.setText(Animal.animal.getPort().toString());
-        publicador.setText(Animal.animal.getPublicador());
+        lblNome.setText(Animal.animal.getNome());
+        lblIdade.setText(""+Animal.animal.getIdade());
+        lblRaca.setText(Animal.animal.getRaca());
+        lblEspecie.setText(Animal.animal.getSpecie().toString());
+        lblGenero.setText(Animal.animal.getGender().toString());
+        lblPorte.setText(Animal.animal.getPort().toString());
+        lblPublicador.setText(Animal.animal.getPublicador());
     }
     @FXML
     private void verPublicador(ActionEvent event){
@@ -58,8 +56,6 @@ public class Animal2C extends AnimalC{
         if(!aux.equals(Usuario.usuarioLogado.getSenha())){
             return;
         }
-        //daria para evitar repetições usando uma função que faça essa verificação
-        //arrumar depois o fato de que as vezes é ==null e outras isEmty
         DadosAnimal.anularRemocao(Animal.animal.getId());
         Navegador.irPara(Tela.VISOR_ADMIN);
     }

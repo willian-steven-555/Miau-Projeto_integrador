@@ -15,48 +15,48 @@ import javax.swing.*;
 
 public class AnimalC extends Controle{
     @FXML
-    private Label nome;
+    private Label lblNome;
     @FXML
-    private Label idade;
+    private Label lblIdade;
     @FXML
-    private Label raca;
+    private Label lblRaca;
     @FXML
-    private Label especie;
+    private Label lblEspecie;
     @FXML
-    private Label genero;
+    private Label lblGenero;
     @FXML
-    private Label porte;
+    private Label lblPorte;
     @FXML
     private Label publicador;
     @FXML
     private ImageView imagem;
     @FXML
-    private Button apagar;
+    private Button btnApagar;
     @FXML
-    private Button ver;
+    private Button btnVer;
     @FXML
-    private Button apagarPostUsuario;
+    private Button btnApagarPostUsuario;
     @FXML
-    private Button editarPost;
+    private Button btnEditarPost;
     @FXML
     private void mostrarDados(ActionEvent event){
         JOptionPane.showMessageDialog(null,
                 "Telefone do dono: "+ Animal.animal.getFoneDono());
     }
     public void initialize(){
-        apagar.setVisible(Usuario.usuarioLogado.getAdmin());
-        ver.setVisible(Usuario.usuarioLogado.getAdmin());
+        btnApagar.setVisible(Usuario.usuarioLogado.getAdmin());
+        btnVer.setVisible(Usuario.usuarioLogado.getAdmin());
         if(!Usuario.usuarioLogado.getNomeUsuario().equals(Animal.animal.getPublicador())){
-            apagarPostUsuario.setVisible(false);
-            editarPost.setVisible(false);
+            btnApagarPostUsuario.setVisible(false);
+            btnEditarPost.setVisible(false);
         }
         imagem.setImage(Animal.animal.getImagem());
-        nome.setText(Animal.animal.getNome());
-        idade.setText(""+Animal.animal.getIdade());
-        raca.setText(Animal.animal.getRaca());
-        especie.setText(Animal.animal.getSpecie().toString());
-        genero.setText(Animal.animal.getGender().toString());
-        porte.setText(Animal.animal.getPort().toString());
+        lblNome.setText(Animal.animal.getNome());
+        lblIdade.setText(""+Animal.animal.getIdade());
+        lblRaca.setText(Animal.animal.getRaca());
+        lblEspecie.setText(Animal.animal.getSpecie().toString());
+        lblGenero.setText(Animal.animal.getGender().toString());
+        lblPorte.setText(Animal.animal.getPort().toString());
         publicador.setText(Animal.animal.getPublicador());
     }
     @FXML

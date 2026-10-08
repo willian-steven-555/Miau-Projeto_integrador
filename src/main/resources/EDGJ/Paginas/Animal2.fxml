@@ -38,19 +38,19 @@
                                  </children>
                               </AnchorPane>
                               <Label layoutX="63.0" layoutY="359.0" styleClass="texto" text="Nome: " />
-                              <Label fx:id="nome" layoutX="61.0" layoutY="379.0" prefHeight="30.0" prefWidth="203.0" styleClass="titulo" text="Label" />
+                              <Label fx:id="lblNome" layoutX="61.0" layoutY="379.0" prefHeight="30.0" prefWidth="203.0" styleClass="titulo" text="Label" />
                               <Label layoutX="588.0" layoutY="186.0" styleClass="texto" text="Idade:" />
-                              <Label fx:id="idade" layoutX="586.0" layoutY="206.0" prefHeight="30.0" prefWidth="149.0" styleClass="subtitulo" text="Label" />
+                              <Label fx:id="lblIdade" layoutX="586.0" layoutY="206.0" prefHeight="30.0" prefWidth="149.0" styleClass="subtitulo" text="Label" />
                               <Label layoutX="410.0" layoutY="63.0" styleClass="texto" text="Especie" />
-                              <Label fx:id="especie" layoutX="408.0" layoutY="83.0" prefHeight="30.0" prefWidth="203.0" styleClass="subtitulo" text="Label" />
+                              <Label fx:id="lblEspecie" layoutX="408.0" layoutY="83.0" prefHeight="30.0" prefWidth="203.0" styleClass="subtitulo" text="Label" />
                               <Label layoutX="411.0" layoutY="128.0" styleClass="texto" text="Sexo" />
-                              <Label fx:id="genero" layoutX="409.0" layoutY="148.0" prefHeight="30.0" prefWidth="203.0" styleClass="subtitulo" text="Label" />
+                              <Label fx:id="lblGenero" layoutX="409.0" layoutY="148.0" prefHeight="30.0" prefWidth="203.0" styleClass="subtitulo" text="Label" />
                               <Label layoutX="412.0" layoutY="189.0" styleClass="texto" text="Porte" />
-                              <Label fx:id="porte" layoutX="410.0" layoutY="209.0" prefHeight="30.0" prefWidth="203.0" styleClass="subtitulo" text="Label" />
+                              <Label fx:id="lblPorte" layoutX="410.0" layoutY="209.0" prefHeight="30.0" prefWidth="203.0" styleClass="subtitulo" text="Label" />
                               <Label layoutX="589.0" layoutY="64.0" styleClass="texto" text="Raça" />
-                              <Label fx:id="raca" layoutX="587.0" layoutY="84.0" prefHeight="30.0" prefWidth="139.0" styleClass="subtitulo" text="Label" />
+                              <Label fx:id="lblRaca" layoutX="587.0" layoutY="84.0" prefHeight="30.0" prefWidth="139.0" styleClass="subtitulo" text="Label" />
                               <Label layoutX="589.0" layoutY="129.0" styleClass="texto" text="Publicador" />
-                              <Label fx:id="publicador" layoutX="587.0" layoutY="149.0" prefHeight="30.0" prefWidth="145.0" styleClass="subtitulo" text="Label" />
+                              <Label fx:id="lblPublicador" layoutX="587.0" layoutY="149.0" prefHeight="30.0" prefWidth="145.0" styleClass="subtitulo" text="Label" />
                               <Button layoutX="405.0" layoutY="299.0" mnemonicParsing="false" onAction="#verPublicador" styleClass="botao" text="Voltar" />
                               <Button layoutX="553.0" layoutY="298.0" mnemonicParsing="false" onAction="#anularRemocao" styleClass="botao" text="Anular remoção" />
                            </children>

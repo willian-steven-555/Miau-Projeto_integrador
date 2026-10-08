@@ -13,43 +13,43 @@ import javax.swing.*;
 
 public class EditorUsuarioC extends Controle {
     @FXML
-    private TextField barraUsuario;
+    private TextField txtUsuario;
     @FXML
-    private TextField barraNome;
+    private TextField txtNome;
     @FXML
-    private TextField barraEmail;
+    private TextField txtEmail;
     @FXML
-    private TextField barraTelefone;
+    private TextField txtTelefone;
     @FXML
-    private TextField barraEndereco;
+    private TextField txtEndereco;
     @FXML
-    private PasswordField barraSenha;
+    private PasswordField txtSenha;
 
     public void initialize(){
-        barraEmail.setText(Usuario.usuarioLogado.getEmail());
-        barraNome.setText(Usuario.usuarioLogado.getNome());
-        barraEndereco.setText(Usuario.usuarioLogado.getEndereco());
-        barraTelefone.setText(Usuario.usuarioLogado.getTelefone());
-        barraUsuario.setText(Usuario.usuarioLogado.getNomeUsuario());
-        barraSenha.setText(Usuario.usuarioLogado.getSenha());
+        txtEmail.setText(Usuario.usuarioLogado.getEmail());
+        txtNome.setText(Usuario.usuarioLogado.getNome());
+        txtEndereco.setText(Usuario.usuarioLogado.getEndereco());
+        txtTelefone.setText(Usuario.usuarioLogado.getTelefone());
+        txtUsuario.setText(Usuario.usuarioLogado.getNomeUsuario());
+        txtSenha.setText(Usuario.usuarioLogado.getSenha());
     }
 
     @FXML
     private void enviar(ActionEvent a) {
-        if(barraUsuario.getText().isBlank() || barraNome.getText().isBlank()||barraEmail.getText().isBlank()||barraTelefone.getText().isBlank()||barraEndereco.getText().isBlank()||barraSenha.getText().isBlank()){
+        if(txtUsuario.getText().isBlank() || txtNome.getText().isBlank()|| txtEmail.getText().isBlank()|| txtTelefone.getText().isBlank()|| txtEndereco.getText().isBlank()|| txtSenha.getText().isBlank()){
             JOptionPane.showMessageDialog(null, "Preencha todos os campos");
             return;
         }
-        if (!barraUsuario.getText().equals(Usuario.usuarioLogado.getNomeUsuario()) && DadosUsuario.existeNome(barraUsuario.getText())) {
+        if (!txtUsuario.getText().equals(Usuario.usuarioLogado.getNomeUsuario()) && DadosUsuario.existeNome(txtUsuario.getText())) {
 
             JOptionPane.showMessageDialog(null, "Nome de Usuario inválido");
             return;
         }
 
-        if(!Verificador.verificaTelefone(barraTelefone.getText())){
+        if(!Verificador.verificaTelefone(txtTelefone.getText())){
             return;
         }
-        if(!Verificador.verificaEmail(barraEmail.getText())){
+        if(!Verificador.verificaEmail(txtEmail.getText())){
             return;
         }
         String aux = JOptionPane.showInputDialog("Digite sua senha para confirmar");
@@ -61,12 +61,12 @@ public class EditorUsuarioC extends Controle {
             return;
         }
         Usuario usuario = new Usuario(
-                barraNome.getText(),
-                barraEmail.getText(),
-                barraSenha.getText(),
-                barraTelefone.getText(),
-                barraEndereco.getText(),
-                barraUsuario.getText(),
+                txtNome.getText(),
+                txtEmail.getText(),
+                txtSenha.getText(),
+                txtTelefone.getText(),
+                txtEndereco.getText(),
+                txtUsuario.getText(),
                 false
         );
         DadosUsuario.editaUsuarioCompleto(usuario);

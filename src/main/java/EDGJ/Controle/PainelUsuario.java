@@ -1,6 +1,5 @@
 package EDGJ.Controle;
 
-import EDGJ.Modelos.Animal;
 import EDGJ.Modelos.Usuario;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

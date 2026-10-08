@@ -14,14 +14,14 @@ public class InicioC extends Controle {
     @FXML
     private FlowPane painelAnimais;
     @FXML
-    private Button admin;
+    private Button btnAdmin;
 
     private PainelAnimais painel;
 
     ArrayList<Animal> lista = DadosAnimal.listarAnimais("SELECT * FROM animal a where not exists(SELECT * FROM animaisRemovidos ar WHERE ar.id = a.id) and not exists(select nomeUsuario from usuariosRemovidos ur where a.publicador = ur.nomeUsuario)");
     @FXML
     private void initialize() {
-        admin.setVisible(Usuario.usuarioLogado.getAdmin());
+        btnAdmin.setVisible(Usuario.usuarioLogado.getAdmin());
         painel = new PainelAnimais(painelAnimais);
         painel.adicionarAnimais(lista);
     }

@@ -26,16 +26,16 @@ public class EditorAnimalC extends Controle {
     private ImageView imagemAnimal;
 
     @FXML
-    private TextField nome;
+    private TextField txtNome;
 
     @FXML
-    private TextField idade;
+    private TextField txtIdade;
 
     @FXML
-    private TextField raca;
+    private TextField txtRaca;
 
     @FXML
-    private TextField telefone;
+    private TextField txtTelefone;
 
     @FXML
     private ToggleGroup genero;
@@ -51,10 +51,10 @@ public class EditorAnimalC extends Controle {
 
     public void initialize() {
         imagemAnimal.setImage(Animal.animal.getImagem());
-        nome.setText(Animal.animal.getNome());
-        idade.setText(""+Animal.animal.getIdade());
-        raca.setText(Animal.animal.getRaca());
-        telefone.setText(Animal.animal.getFoneDono());
+        txtNome.setText(Animal.animal.getNome());
+        txtIdade.setText(""+Animal.animal.getIdade());
+        txtRaca.setText(Animal.animal.getRaca());
+        txtTelefone.setText(Animal.animal.getFoneDono());
         descricao.setText(Animal.animal.getDescricao());
 
     }
@@ -62,9 +62,9 @@ public class EditorAnimalC extends Controle {
     @FXML
     private void enviar(ActionEvent event) {
         if(imagemAnimal.getImage()  == null
-                ||nome.getText().isBlank()
-                || idade.getText().isBlank()
-                || raca.getText().isBlank()
+                || txtNome.getText().isBlank()
+                || txtIdade.getText().isBlank()
+                || txtRaca.getText().isBlank()
                 || descricao.getText().isBlank()
                 || genero.getSelectedToggle() == null
                 || porte.getSelectedToggle() == null
@@ -82,17 +82,17 @@ public class EditorAnimalC extends Controle {
         int idadeA;
         Genero generoA;
         Porte porteA;
-        nomeA = nome.getText();
+        nomeA = txtNome.getText();
         try{
-            idadeA = Integer.parseInt(idade.getText().trim());
+            idadeA = Integer.parseInt(txtIdade.getText().trim());
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null,"A idade tem que ser um número");
             return;
         }
-        racaA = raca.getText();
+        racaA = txtRaca.getText();
         descricaoA = descricao.getText();
         publicador = Usuario.usuarioLogado.getNomeUsuario();
-        telefoneA = telefone.getText();
+        telefoneA = txtTelefone.getText();
 
         RadioButton especieSelecionada = (RadioButton) especie.getSelectedToggle();
         RadioButton generoSelecionado = (RadioButton) genero.getSelectedToggle();

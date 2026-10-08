@@ -4,8 +4,6 @@
 
     import java.sql.*;
     import java.util.ArrayList;
-    import java.util.Locale;
-
 
     public class DadosUsuario{
         public static Usuario verificaLogin(String nomeUsuario, String senha) {

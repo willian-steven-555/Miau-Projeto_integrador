@@ -13,40 +13,40 @@ import javax.swing.*;
 
 public class RegistroC extends Controle{
     @FXML
-    private TextField barraUsuario;
+    private TextField txtUsuario;
     @FXML
-    private TextField barraNome;
+    private TextField txtNome;
     @FXML
-    private TextField barraEmail;
+    private TextField txtEmail;
     @FXML
-    private TextField barraTelefone;
+    private TextField txtTelefone;
     @FXML
-    private TextField barraEndereco;
+    private TextField txtEndereco;
     @FXML
-    private PasswordField barraSenha;
+    private PasswordField txtSenha;
     @FXML
     private void registrar(ActionEvent a) {
-        if(barraUsuario.getText().isBlank() || barraNome.getText().isBlank()||barraEmail.getText().isBlank()||barraTelefone.getText().isBlank()||barraEndereco.getText().isBlank()||barraSenha.getText().isBlank()){
+        if(txtUsuario.getText().isBlank() || txtNome.getText().isBlank()|| txtEmail.getText().isBlank()|| txtTelefone.getText().isBlank()|| txtEndereco.getText().isBlank()|| txtSenha.getText().isBlank()){
             JOptionPane.showMessageDialog(null, "Preencha todos os campos");
             return;
         }
-        if(DadosUsuario.existeNome(barraUsuario.getText())){
+        if(DadosUsuario.existeNome(txtUsuario.getText())){
             JOptionPane.showMessageDialog(null,"Nome de usuario já existente");
             return;
         }
-        if(!Verificador.verificaTelefone(barraTelefone.getText())){
+        if(!Verificador.verificaTelefone(txtTelefone.getText())){
             return;
         }
-        if(!Verificador.verificaEmail(barraEmail.getText())){
+        if(!Verificador.verificaEmail(txtEmail.getText())){
             return;
         }
         Usuario usuario = new Usuario(
-                barraNome.getText(),
-                barraEmail.getText(),
-                barraSenha.getText(),
-                barraTelefone.getText().replaceAll("[()\\-\\s]",""),
-                barraEndereco.getText(),
-                barraUsuario.getText(),
+                txtNome.getText(),
+                txtEmail.getText(),
+                txtSenha.getText(),
+                txtTelefone.getText().replaceAll("[()\\-\\s]",""),
+                txtEndereco.getText(),
+                txtUsuario.getText(),
                 false
         );
         DadosUsuario.addUsuario(usuario);

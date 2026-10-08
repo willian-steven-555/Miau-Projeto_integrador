@@ -1,7 +1,6 @@
 package EDGJ.Controle;
 
 import EDGJ.Dados.DadosAnimal;
-import EDGJ.Dados.DadosUsuario;
 import EDGJ.Dados.MDadosAdmin;
 import EDGJ.Modelos.Animal;
 import EDGJ.Modelos.Enums.Tela;
@@ -19,19 +18,19 @@ import java.util.ArrayList;
 public class VisorAdminC extends Controle{
     private Usuario u;
     @FXML
-    private Label nome;
+    private Label lblNome;
     @FXML
-    private Label nomeUsuario;
+    private Label lblNomeUsuario;
     @FXML
-    private Label email;
+    private Label lblEmail;
     @FXML
-    private Label telefone;
+    private Label lblTelefone;
     @FXML
     private FlowPane painelAnimais;
     @FXML
     private CheckBox removidos;
     @FXML
-    private Button justificativa;
+    private Button btnJustificativa;
     @FXML
     private Button b1;
     private PainelAnimais painel;
@@ -40,12 +39,12 @@ public class VisorAdminC extends Controle{
     public void initialize(){
         u = UsuarioCardC.usuarioVisto;
         if(u.motivoRemocao == null){
-            justificativa.setVisible(false);
+            btnJustificativa.setVisible(false);
         }
-        nome.setText(u.getNome());
-        nomeUsuario.setText(u.getNomeUsuario());
-        email.setText(u.getEmail());
-        telefone.setText(u.getTelefone());
+        lblNome.setText(u.getNome());
+        lblNomeUsuario.setText(u.getNomeUsuario());
+        lblEmail.setText(u.getEmail());
+        lblTelefone.setText(u.getTelefone());
         animais = DadosAnimal.listarAnimais("select * from animal a where publicador = '"+u.getNomeUsuario()+"' and not exists(select ar.id from animaisRemovidos ar where a.id = ar.id)");
         animaisRemovidos = DadosAnimal.listarAnimalRemovido(u.getNomeUsuario());
         painel = new PainelAnimais(painelAnimais);

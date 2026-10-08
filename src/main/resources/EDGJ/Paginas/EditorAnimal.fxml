@@ -57,9 +57,9 @@
                         <Label layoutX="649.0" layoutY="122.0" styleClass="subtitulo" text="Descrição" />
                         <TextArea fx:id="descricao" layoutX="649.0" layoutY="151.0" prefHeight="129.0" prefWidth="263.0" />
                         <Label layoutX="392.0" layoutY="38.0" styleClass="subtitulo" text="Nome" />
-                        <TextField fx:id="nome" layoutX="392.0" layoutY="69.0" prefHeight="25.0" prefWidth="197.0" />
+                        <TextField fx:id="txtNome" layoutX="392.0" layoutY="69.0" prefHeight="25.0" prefWidth="197.0" />
                         <Label layoutX="392.0" layoutY="107.0" styleClass="subtitulo" text="Idade" />
-                        <TextField fx:id="idade" layoutX="392.0" layoutY="138.0" prefHeight="25.0" prefWidth="197.0" />
+                        <TextField fx:id="txtIdade" layoutX="392.0" layoutY="138.0" prefHeight="25.0" prefWidth="197.0" />
                         <Label layoutX="395.0" layoutY="242.0" styleClass="subtitulo" text="Especie" />
                         <RadioButton layoutX="395.0" layoutY="277.0" mnemonicParsing="false" styleClass="texto" text="Gato">
                            <toggleGroup>
@@ -69,9 +69,9 @@
                         <RadioButton layoutX="395.0" layoutY="302.0" mnemonicParsing="false" styleClass="texto" text="Cachorro" toggleGroup="$especie" />
                         <Button layoutX="718.0" layoutY="363.0" mnemonicParsing="false" onAction="#enviar" prefHeight="41.0" prefWidth="133.0" styleClass="botao" text="Enviar" />
                         <Label layoutX="392.0" layoutY="173.0" styleClass="subtitulo" text="Raça" />
-                        <TextField fx:id="raca" layoutX="392.0" layoutY="204.0" prefHeight="25.0" prefWidth="197.0" />
+                        <TextField fx:id="txtRaca" layoutX="392.0" layoutY="204.0" prefHeight="25.0" prefWidth="197.0" />
                         <Label layoutX="647.0" layoutY="37.0" styleClass="subtitulo" text="Telefone" />
-                        <TextField fx:id="telefone" layoutX="647.0" layoutY="68.0" prefHeight="25.0" prefWidth="197.0" />
+                        <TextField fx:id="txtTelefone" layoutX="647.0" layoutY="68.0" prefHeight="25.0" prefWidth="197.0" />
                      </children>
                   </Pane>
                </children>

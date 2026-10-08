@@ -14,15 +14,15 @@ import javax.swing.*;
 public class LoginC extends Controle{
 
     @FXML
-    private TextField barraUsuario;
+    private TextField txtUsuario;
 
     @FXML
-    private PasswordField barraSenha;
+    private PasswordField txtSenha;
 
     @FXML
     private void entrar(ActionEvent a) {
-        String nomeUsuario = barraUsuario.getText();
-        String senha = barraSenha.getText();
+        String nomeUsuario = txtUsuario.getText();
+        String senha = txtSenha.getText();
 
         if (!nomeUsuario.isBlank()&&!senha.isBlank()) {
             Usuario aux;

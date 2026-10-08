@@ -12,29 +12,28 @@ import javax.swing.*;
 public class UsuarioCardC{
     private  Usuario user;
     @FXML
-    private Label usuario;
+    private Label lblUsuario;
     @FXML
-    private Label nome;
+    private Label lblNome;
     @FXML
-    private Label telefone;
+    private Label lblTelefone;
     @FXML
-    private Button justificativa;
+    private Button btnJustificativa;
     public static Usuario usuarioVisto;
     @FXML
     private void initialize(){
-        justificativa.setVisible(Usuario.usuarioLogado.getAdmin());
+        btnJustificativa.setVisible(Usuario.usuarioLogado.getAdmin());
     }
     public void setUsuario(Usuario u){
         user = u;
-        usuario.setText(u.getNomeUsuario());
-        nome.setText((u.getNome()));
-        telefone.setText(u.getTelefone());
+        lblUsuario.setText(u.getNomeUsuario());
+        lblNome.setText((u.getNome()));
+        lblTelefone.setText(u.getTelefone());
     }
     @FXML
     private void verMais(ActionEvent e){
         usuarioVisto = user;
         Navegador.irPara(Tela.VISOR_ADMIN);
-        //mudar
     }
     @FXML
     private void verJustificativa(ActionEvent e){

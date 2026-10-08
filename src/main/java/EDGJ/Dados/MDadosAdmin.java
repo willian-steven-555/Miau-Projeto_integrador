@@ -1,10 +1,6 @@
 package EDGJ.Dados;
 
-
-import javafx.fxml.FXML;
-
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 

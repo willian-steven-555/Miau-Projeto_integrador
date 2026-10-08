@@ -48,8 +48,8 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <PasswordField id="senha" fx:id="barraSenha" layoutX="87.0" layoutY="190.0" prefHeight="25.0" prefWidth="241.0" scaleX="1.5" scaleY="1.5" styleClass="campo" />
-                        <TextField id="nomeUsuario" fx:id="barraUsuario" layoutX="87.0" layoutY="109.0" prefHeight="25.0" prefWidth="241.0" scaleX="1.5" scaleY="1.5" styleClass="campo" />
+                        <PasswordField id="senha" fx:id="txtSenha" layoutX="87.0" layoutY="190.0" prefHeight="25.0" prefWidth="241.0" scaleX="1.5" scaleY="1.5" styleClass="campo" />
+                        <TextField id="nomeUsuario" fx:id="txtUsuario" layoutX="87.0" layoutY="109.0" prefHeight="25.0" prefWidth="241.0" scaleX="1.5" scaleY="1.5" styleClass="campo" />
                         <Button id="botaoEntrar" layoutX="170.0" layoutY="244.0" mnemonicParsing="false" onAction="#entrar" prefHeight="25.0" prefWidth="81.0" scaleX="1.0" scaleY="1.0" styleClass="botao" text="Entrar" textFill="WHITE" />
                      </children>
                   </Pane>

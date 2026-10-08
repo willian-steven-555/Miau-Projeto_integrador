@@ -26,16 +26,16 @@ public class AddAnimalC extends Controle {
     private ImageView imagemAnimal;
 
     @FXML
-    private TextField nome;
+    private TextField txtNome;
 
     @FXML
-    private TextField idade;
+    private TextField txtIdade;
 
     @FXML
-    private TextField raca;
+    private TextField txtRaca;
 
     @FXML
-    private TextField telefone;
+    private TextField txtTelefone;
 
     @FXML
     private ToggleGroup genero;
@@ -58,9 +58,9 @@ public class AddAnimalC extends Controle {
     @FXML
     private void enviar(ActionEvent event) {
         if(imagemSelecionada == null
-                ||nome.getText().isBlank()
-                || idade.getText().isBlank()
-                || raca.getText().isBlank()
+                || txtNome.getText().isBlank()
+                || txtIdade.getText().isBlank()
+                || txtRaca.getText().isBlank()
                 || descricao.getText().isBlank()
                 || genero.getSelectedToggle() == null
                 || porte.getSelectedToggle() == null
@@ -78,17 +78,17 @@ public class AddAnimalC extends Controle {
         int idadeA;
         Genero generoA;
         Porte porteA;
-        nomeA = nome.getText();
+        nomeA = txtNome.getText();
         try{
-            idadeA = Integer.parseInt(idade.getText().trim());
+            idadeA = Integer.parseInt(txtIdade.getText().trim());
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null,"A idade tem que ser um número");
             return;
         }
-        racaA = raca.getText();
+        racaA = txtRaca.getText();
         descricaoA = descricao.getText();
         publicador = Usuario.usuarioLogado.getNomeUsuario();
-        telefoneA = telefone.getText();
+        telefoneA = txtTelefone.getText();
 
         RadioButton especieSelecionada = (RadioButton) especie.getSelectedToggle();
         RadioButton generoSelecionado = (RadioButton) genero.getSelectedToggle();
@@ -156,9 +156,9 @@ public class AddAnimalC extends Controle {
     @FXML
     private void numero(ActionEvent event) {
         if(checkTelefone.isSelected()){
-            telefone.setText(Usuario.usuarioLogado.getTelefone());
+            txtTelefone.setText(Usuario.usuarioLogado.getTelefone());
         }else{
-            telefone.setText("");
+            txtTelefone.setText("");
         }
     }
     private Image cortarQuadrado(Image imagem) {
