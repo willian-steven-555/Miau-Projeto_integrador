@@ -1,12 +1,12 @@
 package EDGJ.Dados;
 
+import EDGJ.Controle.Navegador;
+import EDGJ.Erros.FalhaNaConexaoException;
 import EDGJ.Modelos.Animal;
-import EDGJ.Modelos.Enums.Especie;
-import EDGJ.Modelos.Enums.Genero;
-import EDGJ.Modelos.Enums.Porte;
+import EDGJ.Modelos.Enums.*;
 import javafx.scene.image.Image;
-
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -35,11 +35,13 @@ public class DadosAnimal {
                         r.getInt("idade"),
                         Genero.valueOf(r.getString("genero").replaceAll("ê", "e").toUpperCase()),
                         Porte.valueOf(r.getString("porte").replaceAll("é","e").toUpperCase()),
-                        //ver depois se deixar assim ou se será exigido algo mais robusto
                         byteImagem(r.getBytes("imagem"))
                                 ));
             }
-        }catch(SQLException e){
+        }catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -61,8 +63,11 @@ public class DadosAnimal {
             p.setString(10,animal.getSpecie().toString());
 
             p.executeUpdate();
-        }catch(SQLException error){
-            error.printStackTrace();
+        }catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
     public static Image byteImagem(byte[] imagem){
@@ -92,6 +97,9 @@ public class DadosAnimal {
         try {
             p.setInt(1,id);
             p.executeUpdate();
+        } catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -112,6 +120,9 @@ public class DadosAnimal {
             p.setString(9,animalNovo.getDescricao());
             p.setInt(10,animalNovo.getId());
             p.executeUpdate();
+        }catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -141,6 +152,9 @@ public class DadosAnimal {
                 animal.motivoRemocao = r.getString("descricaoDeInfracao");
                 animals.add(animal);
             }
+        }catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -170,6 +184,9 @@ public class DadosAnimal {
                 animal.motivoRemocao = r.getString("descricaoDeInfracao");
                 animals.add(animal);
             }
+        }catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -182,6 +199,9 @@ public class DadosAnimal {
         try {
             p.setInt(1,id);
             p.executeUpdate();
+        }catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
         } catch (SQLException e) {
             e.printStackTrace();
         }

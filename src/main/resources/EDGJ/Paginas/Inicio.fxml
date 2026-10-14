@@ -17,16 +17,16 @@
 
          <children>
 
-            <Pane layoutX="19.0" layoutY="4.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
+            <Pane layoutX="14.0" layoutY="5.0" prefHeight="90.0" prefWidth="90.0" styleClass="logo" />
 
-            <Button layoutX="1153.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaDoacao" styleClass="botao" text="Doar" />
+            <Button layoutX="1159.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaDoacao" styleClass="botao" text="Doar" />
 
-            <Button layoutX="1000.0" layoutY="32.0" mnemonicParsing="false" onAction="#irParaAddAnimal" styleClass="botao" text="Postar animal" />
+            <Button layoutX="1000.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaAddAnimal" styleClass="botao" text="Postar animal" />
 
-            <Button layoutX="906.0" layoutY="32.0" mnemonicParsing="false" onAction="#irParaPerfil" styleClass="botao" text="Perfil" />
+            <Button layoutX="907.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaPerfil" styleClass="botao" text="Perfil" />
 
-            <Label layoutX="140.0" layoutY="16.0" styleClass="Miau" text="Miau" />
-            <Button fx:id="btnAdmin" layoutX="761.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaAdmin" styleClass="botao" text="Visor admin" />
+            <Label layoutX="119.0" layoutY="21.0" styleClass="Miau" text="Miau" />
+            <Button fx:id="btnAdmin" layoutX="759.0" layoutY="31.0" mnemonicParsing="false" onAction="#irParaAdmin" styleClass="botao" text="Visor admin" />
 
          </children>
       </Pane>
@@ -50,13 +50,15 @@
                      <children>
 
                         <!-- Fundo/banner -->
-                        <Pane layoutX="-5.0" opacity="0.5" prefHeight="256.0" prefWidth="1281.0" style="-fx-background-color: blue;" />
+                        <Pane layoutX="-8.0" layoutY="-14.0" opacity="0.5" prefHeight="256.0" prefWidth="1281.0" style="-fx-background-color: blue;">
+                           <children>
+      
+                              <!-- Botão de dicas -->
+                              <Button layoutX="1101.0" layoutY="111.0" mnemonicParsing="false" onAction="#irParaVerDicas" prefHeight="59.0" prefWidth="121.0" styleClass="botao" text="Ver dicas" />
+                           </children></Pane>
 
-                        <!-- Texto -->
-                        <Label layoutX="98.0" layoutY="36.0" prefHeight="187.0" prefWidth="850.0" styleClass="texto" text="eftwnjfdjsfnjkzvfjkkfdzdnjfzvnjfzdnjbf" />
-
-                        <!-- Botão de dicas -->
-                        <Button layoutX="1114.0" layoutY="108.0" mnemonicParsing="false" onAction="#irParaVerDicas" prefHeight="59.0" prefWidth="121.0" styleClass="botao" text="Ver dicas" />
+                              <!-- Texto -->
+                        <Label layoutX="98.0" layoutY="36.0" prefHeight="187.0" prefWidth="850.0" styleClass="texto" text="oiiiiiiiiiiiiiiii" />
 
                      </children>
                   </Pane>

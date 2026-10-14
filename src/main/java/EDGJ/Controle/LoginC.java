@@ -1,7 +1,7 @@
 package EDGJ.Controle;
 
 import EDGJ.Dados.DadosUsuario;
-import EDGJ.Erros.UsuarioBanidoErro;
+import EDGJ.Erros.UsuarioBanidoException;
 import EDGJ.Modelos.Enums.Tela;
 import EDGJ.Modelos.Usuario;
 import javafx.event.ActionEvent;
@@ -28,7 +28,7 @@ public class LoginC extends Controle{
             Usuario aux;
             try{
                 aux  = DadosUsuario.verificaLogin(nomeUsuario, senha);
-            }catch(UsuarioBanidoErro e){
+            }catch(UsuarioBanidoException e){
                 JOptionPane.showMessageDialog(null,e.getMessage());
                 return;
             }

@@ -1,5 +1,8 @@
     package EDGJ.Dados;
-    import EDGJ.Erros.UsuarioBanidoErro;
+    import EDGJ.Controle.Navegador;
+    import EDGJ.Erros.FalhaNaConexaoException;
+    import EDGJ.Erros.UsuarioBanidoException;
+    import EDGJ.Modelos.Enums.Tela;
     import EDGJ.Modelos.Usuario;
 
     import java.sql.*;
@@ -24,18 +27,21 @@
                             rs.getBoolean("administrador")
                     );
                 }else{
-                    sql = "SELECT u.*,ur.* FROM usuario u WHERE EXISTS (SELECT * FROM usuariosRemovidos ub WHERE ub.nomeUsuario = u.nomeUsuario) and nomeUsuario = ? and senha = ?;";
+                    sql = "SELECT u.*, ur.descricaoDeInfracao FROM usuario u JOIN usuariosRemovidos ur ON ur.nomeUsuario = u.nomeUsuario WHERE u.nomeUsuario = ? AND u.senha = ?;";
                     PreparedStatement p2 = Conexao.conexao.prepared(sql);
                     p2.setString(1, nomeUsuario);
                     p2.setString(2, senha);
                     ResultSet r = p2.executeQuery();
                     if(r.next()){
-                        throw new UsuarioBanidoErro(r.getString("descricaoDeInfracao"));
+                        throw new UsuarioBanidoException(r.getString("descricaoDeInfracao"));
                     }else{
                         return null;
                     }
                 }
-            }catch(SQLException e){
+            }catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
             return null;
@@ -54,6 +60,9 @@
                 p.setString(6, usuario.getEndereco());
                 p.executeUpdate();
 
+            } catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -69,6 +78,9 @@
 
                 return rs.next();
 
+            } catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -86,6 +98,9 @@
 
                 return rs.next();
 
+            } catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -104,6 +119,9 @@
 
                 return p.executeUpdate() > 0;
 
+            } catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -115,20 +133,29 @@
             String nomeUsuario = Usuario.usuarioLogado.getNomeUsuario();
 
             try {
+                PreparedStatement p0 = Conexao.conexao.prepared(
+                        "DELETE ar FROM animaisRemovidos ar JOIN animal a ON a.id = ar.id WHERE a.publicador = ?"
+                );
+                p0.setString(1,nomeUsuario);
+                p0.executeUpdate();
                 PreparedStatement p1 = Conexao.conexao.prepared(
                         "DELETE FROM animal WHERE publicador = ?"
                 );
-
                 p1.setString(1, nomeUsuario);
                 p1.executeUpdate();
 
-                PreparedStatement p2 = Conexao.conexao.prepared(
-                        "DELETE FROM usuario WHERE nomeUsuario = ?"
-                );
-
-                p2.setString(1, nomeUsuario);
+                PreparedStatement p2 = Conexao.conexao.prepared("delete from usuariosRemovidos where nomeUsuario = ?");
+                p2.setString(1,nomeUsuario);
                 p2.executeUpdate();
 
+                PreparedStatement p3 = Conexao.conexao.prepared(
+                        "DELETE FROM usuario WHERE nomeUsuario = ?"
+                );
+                p3.setString(1, nomeUsuario);
+                p3.executeUpdate();
+            } catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -145,6 +172,9 @@
                 p.setString(6,usuario.getEndereco());
                 p.setString(7,Usuario.usuarioLogado.getNomeUsuario());
                 p.executeUpdate();
+            } catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -165,13 +195,45 @@
                     );
                     return a;
                 }
+            } catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
             return null;
         }
 
-        public static ArrayList<Usuario> listarUsuario(String sql) {
+        public static ArrayList<Usuario> listarUsuarioBanido() {
+            String sql = "select * from usuario u, usuariosRemovidos ur where u.nomeUsuario = ur.nomeUsuario";
+            ArrayList<Usuario> usuarios = new ArrayList<>();
+
+            try {
+                PreparedStatement p = Conexao.conexao.prepared(sql);
+                ResultSet r = p.executeQuery();
+
+                while (r.next()) {
+                    Usuario u = new Usuario(
+                            r.getString("nome"),
+                            r.getString("email"),
+                            r.getString("telefone"),
+                            r.getString("nomeUsuario")
+                    );
+                    u.motivoRemocao = r.getString("descricaoDeInfracao");
+                    usuarios.add(u);
+                }
+
+            } catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            return usuarios;
+        }
+        public static ArrayList<Usuario> listarUsuario() {
+            String sql = "SELECT * FROM usuario u WHERE NOT EXISTS (SELECT * FROM usuariosRemovidos ub WHERE ub.nomeUsuario = u.nomeUsuario)";
 
             ArrayList<Usuario> usuarios = new ArrayList<>();
 
@@ -186,15 +248,17 @@
                             r.getString("telefone"),
                             r.getString("nomeUsuario")
                     );
-
                     usuarios.add(u);
                 }
 
+            } catch(FalhaNaConexaoException e){
+                e.printStackTrace();
+                Navegador.irPara(Tela.SEM_CONEXAO);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
             return usuarios;
         }
-        //Adiconar correção para erros de conexão
+
     }

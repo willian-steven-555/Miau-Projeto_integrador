@@ -1,5 +1,9 @@
 package EDGJ.Dados;
 
+import EDGJ.Controle.Navegador;
+import EDGJ.Erros.FalhaNaConexaoException;
+import EDGJ.Modelos.Enums.Tela;
+
 import java.sql.*;
 
 public class Conexao {
@@ -10,18 +14,28 @@ public class Conexao {
     public static Conexao conexao = new Conexao();
     public Conexao(){
         try{
+            conector();
+        }catch (FalhaNaConexaoException e){
+            Navegador.irPara(Tela.SEM_CONEXAO);
+        }
+    }
+    public void conector(){
+        try{
             connection = DriverManager.getConnection(url,usuario, senha);
-        } catch(SQLException error){
-            error.printStackTrace();
+        } catch(SQLException e){
+            e.printStackTrace();
+            throw new FalhaNaConexaoException();
         }
     }
     public  PreparedStatement prepared(String sql){
+        if(connection == null){
+            throw new FalhaNaConexaoException();
+        }
         PreparedStatement ps;
         try{
             ps = connection.prepareStatement(sql);
         }catch(SQLException error){
-            ps = null;
-            error.printStackTrace();
+            throw new FalhaNaConexaoException();
         }
         return ps;
     }

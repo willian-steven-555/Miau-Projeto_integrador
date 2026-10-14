@@ -12,9 +12,10 @@ public enum Tela {
     ADDANIMAL("/EDGJ/Paginas/AddAnimal.fxml"),
     EDITOR_ANIMAL("/EDGJ/Paginas/EditorAnimal.fxml"),
     EDITOR_USUARIO("/EDGJ/Paginas/EditorUsuario.fxml"),
-    VISOR_ADMIN("/EDGJ/Paginas/VisorAdmin.fxml"),
+    VISOR_ADMIN("/EDGJ/Paginas/VerUsuario.fxml"),
     ANIMAL2("/EDGJ/Paginas/Animal2.fxml"),
-    VISOR_ADMIN2("/EDGJ/Paginas/VisorAdmin2.fxml");
+    VISOR_ADMIN2("/EDGJ/Paginas/PainelAdmin.fxml"),
+    SEM_CONEXAO("/EDGJ/Paginas/SemConexao.fxml");
 
     private final String pagina;
 

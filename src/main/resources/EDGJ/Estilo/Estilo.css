@@ -28,7 +28,7 @@
 
 .texto {
     -fx-text-fill: -cor-texto;
-    -fx-font-size: 14px;
+    -fx-font-size: 12px;
 }
 
 .texto-secundario {
@@ -79,7 +79,7 @@
     -fx-border-color: transparent;
     -fx-border-width: 2px;
 
-    -fx-padding: 8px 10px;
+    -fx-padding: 4px 6px;
 }
 
 .campo:focused {

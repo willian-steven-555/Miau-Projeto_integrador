@@ -73,9 +73,5 @@ public class Usuario {
     public boolean getAdmin(){
         return admin;
     }
-    //tirar depois
-    public void setAdmin(boolean b) {
-        admin = b;
-    }
 }
 

@@ -1,5 +1,9 @@
 package EDGJ.Dados;
 
+import EDGJ.Controle.Navegador;
+import EDGJ.Erros.FalhaNaConexaoException;
+import EDGJ.Modelos.Enums.Tela;
+
 import javax.swing.*;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -12,7 +16,10 @@ public class MDadosAdmin{
             p.setString(1,numUser);
             p.setString(2,descricao);
             p.executeUpdate();
-        }catch(SQLException e){
+        } catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -23,7 +30,10 @@ public class MDadosAdmin{
             p.setInt(1,id);
             p.setString(2,descricao);
             p.executeUpdate();
-        }catch(SQLException e){
+        }catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -33,6 +43,9 @@ public class MDadosAdmin{
         try {
             p.setString(1,nomeUsuario);
             p.executeUpdate();
+        } catch(FalhaNaConexaoException e){
+            e.printStackTrace();
+            Navegador.irPara(Tela.SEM_CONEXAO);
         } catch (SQLException e) {
             e.printStackTrace();
         }

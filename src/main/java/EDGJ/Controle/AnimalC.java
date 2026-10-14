@@ -70,7 +70,7 @@ public class AnimalC extends Controle{
         if(aux2 == null || aux2.isBlank()){
             return;
         }
-        if(!aux.equals(Usuario.usuarioLogado.getSenha())){
+        if(!aux2.equals(Usuario.usuarioLogado.getSenha())){
             return;
         }
         MDadosAdmin.removerPost(Animal.animal.getId(), aux);

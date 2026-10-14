@@ -12,7 +12,7 @@ public class DicasC extends Controle{
     @FXML
     private void initialize(){
         Image imagem = new Image(
-                getClass().getResource("/EDGJ/Estilo/Imagens/img1.png").toExternalForm()
+                getClass().getResource("/EDGJ/Estilo/Imagens/img1.jpg").toExternalForm()
         );
         img1.setImage(imagem);
         Image imagem2 = new Image(

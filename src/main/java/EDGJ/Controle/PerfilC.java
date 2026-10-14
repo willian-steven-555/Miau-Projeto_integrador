@@ -129,6 +129,7 @@ public class PerfilC extends Controle{
         }
         if(aux.equals("Apagar conta")){
             DadosUsuario.apagarConta();
+            Navegador.irPara(Tela.LOGIN);
         }
     }
     @FXML

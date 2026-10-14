@@ -31,8 +31,8 @@ public class VisorAdmin2C extends Controle{
     private void initialize(){
         animais = DadosAnimal.listarAnimais("SELECT * FROM animal a where not exists(SELECT * FROM animaisRemovidos ar WHERE ar.id = a.id) and not exists(select nomeUsuario from usuariosRemovidos ur where a.publicador = ur.nomeUsuario)");
         animaisRemovidos = DadosAnimal.listarAnimalRemovido();
-        usuarios = DadosUsuario.listarUsuario("SELECT * FROM usuario u WHERE NOT EXISTS (SELECT * FROM usuariosRemovidos ub WHERE ub.nomeUsuario = u.nomeUsuario)");
-        usuariosRemovidos = DadosUsuario.listarUsuario("select * from usuario u, usuariosRemovidos ur where u.nomeUsuario = ur.nomeUsuario");
+        usuarios = DadosUsuario.listarUsuario();
+        usuariosRemovidos = DadosUsuario.listarUsuarioBanido();
         painelA = new PainelAnimais(painelAnimais);
         painelA.adicionarAnimais(animais);
         painelU = new PainelUsuario(painelUsuarios);
